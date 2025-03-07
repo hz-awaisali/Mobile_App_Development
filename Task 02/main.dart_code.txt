@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(BGNUApp());
+}
+
+class BGNUApp extends StatelessWidget {
+  const BGNUApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              //   Image.asset('assets/images/Logo.png', height: 40),
+              // SizedBox(width: 10),
+                Container(
+                  margin: EdgeInsets.only(right: 10),
+                  child: Image.network(
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf128r5IBVPJP4YimfFyebJbLGUdPbn-8z5A&s',
+                    height: 40,
+                  ),
+                ),
+              Text(
+                'Baba Guru Nanak University',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+          backgroundColor: Colors.blueAccent,
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 20),
+              Text(
+                'About BGNU',
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  'Baba Guru Nanak University (BGNU) is a Public sector university located in District Nankana Sahib, in the Punjab region of Pakistan. It plans to facilitate between 10,000 to 15,000 students from all over the world at the university. The foundation stone of the university was laid on October 28, 2019 ahead of 550th of Guru Nanak Gurpurab by the Prime Minister of Pakistan. On July, 02, 2020 Government of Punjab has formally passed Baba Guru Nanak University Nankana Sahib Act 2020 (X of 2020).'
+                  ' The plan behind the establishment of this university to be modeled along the lines of world renowned universities with focus on languages and Punjab Studies offering faculties in "Medicine", "Pharmacy", "Engineering", "Computer science”, “Languages", "Music" and "Social sciences". The initial cost Rupees 6 billion has already been allocated in the budget for this project to be spent in three phases on construction of Baba Guru Nanak University Nankana Sahib. The development work of Phase-I has already been started by Communication and Works Department of Government of Punjab.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                ),
+              ),
+              SizedBox(height: 20),
+              Image.asset('assets/images/Awais.png', height: 200),
+              SizedBox(height: 40),
+            ],
+          ),
+        ),
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.all(10),
+          color: Colors.blueAccent,
+          child: Text(
+            '© 2025 BGNU. All rights reserved.',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+}
